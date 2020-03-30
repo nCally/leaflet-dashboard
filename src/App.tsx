@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Map as LeafletMap, TileLayer, Marker } from "react-leaflet";
+import socketIO from "socket.io-client";
+const socket = socketIO("http://localhost:3500")
 
 function App() {
 
@@ -15,6 +17,10 @@ function App() {
         }, 1000)
 
         return () => clearInterval(interval) */
+
+        socket.on("display", function(data:any){
+            //
+        })
     })
 
     return (
